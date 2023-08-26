@@ -271,3 +271,198 @@ let expected;
 // }
 
 // 4
+// /**
+//  * 与えられた配列の最初の要素を取り除き、その要素を返す
+//  * @param {Array<any>} list - 配列
+//  * @returns {any} 与えられた配列の先頭の要素を返す
+//  */
+// // ここにコードを書きましょう
+// function myShift(list) {
+//   return list.splice(0, 1)[0];
+// }
+
+// const array = [1, 2, 3, 4];
+
+// actual = myShift(array);
+// expected = 1;
+
+// if (actual === expected) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
+
+// actual = array;
+// expected = [2, 3, 4];
+
+// if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
+
+// 応用演習
+// 1
+console.log("----- 1 -----");
+
+// /**
+//  * @param {Array<string>} arrayOfPeople - 人の名前の配列
+//  * @returns {number} 与えられた配列の長さ
+//  */
+// function numberOfPeople(arrayOfPeople) {
+//   // ここにコードを書きましょう
+//   let i = 0;
+//   for (const elem of arrayOfPeople) {
+//     i++;
+//   }
+//   return i;
+// }
+
+// actual = numberOfPeople(["Koike", "Mizuno", "Akagi", "Yano"]);
+// expected = 4;
+
+// if (actual === expected) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
+
+// 2
+console.log("----- 2 -----");
+
+// /**
+//  * @param {Array<any>} array1 - 1 番目の配列
+//  * @param {Array<any>} array2 - 2 番目の配列
+//  * @returns {boolean} 2 つの配列が互いに逆順かどうか
+//  */
+// // ここにコードを書きましょう
+// function areReverses(array1, array2) {
+//   const list = array1.slice();
+//   console.log(list);
+//   if (JSON.stringify(list.reverse()) === JSON.stringify(array2)) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// let array1 = [1, 2, 3, 4];
+// let array2 = [4, 3, 2, 1];
+
+// actual = areReverses(array1, array2);
+// expected = true;
+
+// if (actual === expected) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
+
+// actual = array1;
+// expected = [1, 2, 3, 4];
+
+// // 元の配列が変更されていないことを確認する
+// if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
+
+// array1 = [1, 2, 3, 4];
+// array2 = [1, 2, 3, 4];
+
+// actual = areReverses(array1, array2);
+// expected = false;
+
+// if (actual === expected) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
+
+// 3
+console.log("----- 3 -----");
+
+// /**
+//  * @param {Array<any>} array1 - 1 番目の配列
+//  * @param {Array<any>} array2 - 2 番目の配列
+//  * @returns {Array<any>} 与えられた 2 つの配列を連結した新しい 1 つの配列を返す
+//  */
+// // ここにコードを書きましょう
+// function myConcat(array1, array2) {
+//   // const list = array1.slice();
+//   // for (const elem of array2) {
+//   //   list.push(elem);
+//   // }
+//   // return list;
+
+//   const list = [...array1, ...array2]
+//   return list;
+// }
+
+// let array1 = [1, 2, 3, 4];
+// let array2 = [4, 3, 2, 1];
+
+// actual = myConcat(array1, array2);
+// expected = [1, 2, 3, 4, 4, 3, 2, 1];
+
+// if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
+
+// // 元の配列が変更されていないことを確認する
+// actual = array1;
+// expected = [1, 2, 3, 4];
+
+// if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
+
+// actual = array2;
+// expected = [4, 3, 2, 1];
+
+// if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
