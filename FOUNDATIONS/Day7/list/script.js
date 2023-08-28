@@ -311,7 +311,7 @@ let expected;
 
 // 応用演習
 // 1
-console.log("----- 1 -----");
+// console.log("----- 1 -----");
 
 // /**
 //  * @param {Array<string>} arrayOfPeople - 人の名前の配列
@@ -340,7 +340,7 @@ console.log("----- 1 -----");
 // }
 
 // 2
-console.log("----- 2 -----");
+// console.log("----- 2 -----");
 
 // /**
 //  * @param {Array<any>} array1 - 1 番目の配列
@@ -405,7 +405,7 @@ console.log("----- 2 -----");
 // }
 
 // 3
-console.log("----- 3 -----");
+// console.log("----- 3 -----");
 
 // /**
 //  * @param {Array<any>} array1 - 1 番目の配列
@@ -413,21 +413,21 @@ console.log("----- 3 -----");
 //  * @returns {Array<any>} 与えられた 2 つの配列を連結した新しい 1 つの配列を返す
 //  */
 // // ここにコードを書きましょう
-// function myConcat(array1, array2) {
-//   // const list = array1.slice();
-//   // for (const elem of array2) {
-//   //   list.push(elem);
-//   // }
-//   // return list;
+function myConcat(array1, array2) {
+  // const list = array1.slice();
+  // for (const elem of array2) {
+  //   list.push(elem);
+  // }
+  // return list;
 
-//   const list = [...array1, ...array2]
-//   return list;
-// }
+  const list = [...array1, ...array2]
+  return list;
+}
 
-// let array1 = [1, 2, 3, 4];
-// let array2 = [4, 3, 2, 1];
+let array1 = [1, 2, 3, 4];
+let array2 = [4, 3, 2, 1];
 
-// actual = myConcat(array1, array2);
+actual = myConcat(array1, array2);
 // expected = [1, 2, 3, 4, 4, 3, 2, 1];
 
 // if (JSON.stringify(actual) === JSON.stringify(expected)) {
@@ -466,3 +466,60 @@ console.log("----- 3 -----");
 //   console.log("expected:", expected);
 //   console.groupEnd("Result:");
 // }
+
+// ビルドインメソッド
+// 1
+// console.log("--- 1 ---");
+// actual.forEach(element => {
+//   console.log(element);
+// });
+
+/// 2
+// console.log("--- 2 ---");
+// actual.forEach(element => {
+//   console.log(element * 2);
+// });
+
+// ナイトメア
+console.log("--- ナイトメア ---");
+// 1
+// console.log("--- 1 ---");
+
+// /**
+//  * @param {Array<number>} lists - 数字の配列
+//  * @returns {Array<number>} 与えられた配列の要素を昇順に並べた新しい配列
+//  */
+// function mySort(lists) {
+//   // ここにコードを書きましょう.
+//   const result = [];
+
+// }
+
+// let arrayToSort = [5, 4, 3, 2, 1];
+
+// actual = mySort(arrayToSort);
+// expected = [1, 2, 3, 4, 5];
+
+// // 正しい結果を返すことを確認する
+// if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
+
+// // 元の配列が変更されていないことを確認する
+// if (JSON.stringify(arrayToSort) === JSON.stringify([5, 4, 3, 2, 1])) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
+
+// ここにテストを書いてください
