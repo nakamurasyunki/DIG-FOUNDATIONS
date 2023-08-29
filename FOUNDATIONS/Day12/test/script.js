@@ -1,6 +1,20 @@
 'use strict'
 // 1行目に記載している 'use strict' は削除しないでください
 
+function test(actual, expected) {
+  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log("OK! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Try again!");
+    console.group("Result:");
+    console.log("  actual:", actual);
+    console.log("expected:", expected);
+    console.trace();
+    console.groupEnd();
+  }
+}
+
+
 // callback関数
 // const double = function (x) {
 //   return 2 * x;
@@ -117,3 +131,65 @@ console.log("--- 2 ---");
 // console.log(typeof returnAll(foo())); // string
 
 console.log("--- 中級演習 ---");
+console.log("--- 1 ---");
+
+// /**
+//  * @param {Function} func
+//  * @param {any} num - 第 1 引数で与えられた関数に渡す値
+//  * @returns {any} 与えられた引数を、与えられた関数に渡したときの返り値
+//  */
+
+// // ここにコードを書きましょう
+// function doSomething(func, num) {
+//   return func(num);
+// }
+// function addTen(number) {
+//   return number + 10;
+// }
+
+// test(doSomething(addTen, 6), 16);
+// test(doSomething(addTen, -100), -90);
+// console.log(doSomething(function (num) {
+//   return num * 4;
+// }, 2));
+
+//  // 戻り値は 8 です。
+
+console.log("--- 2 ---");
+
+// const outer = function () {
+//   return function () {
+//     return 5;
+//   };
+// };
+
+// console.log(outer());
+// // function () {
+// //   return 5;
+// // }
+// console.log(typeof outer());
+// // function
+// console.log("----------------");
+// const inner = outer();
+// console.log(inner);
+// // function () {
+// //   return 5;
+// // }
+// console.log(typeof inner);
+// // function
+// console.log("----------------");
+// console.log(inner());
+
+console.log("--- 3 ---");
+
+// const add = function (x) {
+//   return function (y) {
+//     return x + y;
+//   };
+// };
+
+// const addFive = add(5);
+// let foo = addFive(3);
+// console.log(foo); // 8
+// console.log("----------------");
+// console.log(typeof addFive); // function
