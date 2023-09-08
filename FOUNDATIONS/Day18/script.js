@@ -203,17 +203,33 @@ console.log("--- 2 ---");
 // test(intersection([1, 2, 3], [4, 5, 6]), []);
 
 console.log("--- 応用演習 ---");
+const months = ['Jan', 'March', 'April', 'June'];
+console.log("Return Splice", months.splice(1, 0, 'Feb'));
+console.log("Original", months);
+
+const animals = ['dog', 'cat', 'apple', 'bird'];
+console.log("Return Splice", animals.splice(2, 1, 'sloth'));
+console.log("Original", animals);
+
 console.log("--- 1 ---");
 /**
  * @param {...Array<any>} ??? - 任意の数の配列
  * @returns {Array<any>} 与えられた配列のすべてに共通する要素だけが入った配列
  */
 // ここにコードを書きましょう
-const intersection = (...array) => array.filter(function (elements) {
-  return elements.filter(function (elem) {
-    return array.includes(elem);
+const intersection = (array1, ...array) => array1.filter(
+  elem => array.filter(function (arrays) {
+    return arrays.includes(elem);
   })
-})
+)
+// function intersection(...arrays) {
+//   const result = [];
+//   for (const array of arrays) {
+//     for (const elem of array) {
+
+//     }
+//   }
+// }
 
 test(intersection([1, 2, 3], [1, 2, 3], [1, 2, 3]), [1, 2, 3]);
 test(intersection([1, 2, 3], [2, 3, 4], [3, 4, 5]), [3]);
@@ -226,4 +242,74 @@ test(
 console.log("--- 2 ---");
 console.log("--- ナイトメア ---");
 console.log("--- 1 ---");
+/**
+//  * @param {...number} ???
+//  * @returns {number} 与えられた数値を合計した値
+//  */
+
+// function getSum(...numbers) {
+//   let result = 0;
+//   numbers.map(num => result += num);
+//   return result;
+// }
+
+// function getSum(...numbers) {
+//   let result = 0;
+//   for (const num of numbers) {
+//     result += num;
+//   }
+//   return result;
+// }
+
+// test(getSum(3, 4, 6), 13);
+// test(getSum(2, 5, 8, 19), 34);
+
 console.log("--- 2 ---");
+// /**
+//  * @param {...object} オブジェクト。
+//  * @returns {object} 与えられたオブジェクトの、特定の値を抽出して合計したオブジェクト
+//  */
+// const fareReceiptObj = {
+//   title: "交通費",
+//   cost: 2300,
+//   description: "電車とバス"
+// }
+
+// const foodReceiptObj = {
+//   title: "食費",
+//   cost: 4000,
+//   description: "うなぎ"
+// }
+
+// const guideReceiptObj = {
+//   title: "現地ガイド",
+//   cost: 12000,
+//   description: "阿蘇の現地ガイド"
+// }
+
+// function getTotalCost(...objects) {// [{},{}]
+//   return objects.reduce((res, obj) => {
+//     const key = "cost";
+//     key in res ? res[key] += obj[key] : res[key] = obj[key]
+//     return res
+//   }, {})
+// }
+// function getTotalCost(...objects) {// [{},{}]
+//   const result = { cost: 0 };
+//   for (const obj of objects) {// {}
+//     result.cost += obj.cost;
+//   }
+//   return result;
+// }
+// function getTotalCost(...objects) {// [{},{}]
+//   const result = {};
+//   let val = 0;
+//   for (const obj of objects) {// {}
+//     val += obj.cost;
+//   }
+//   result["cost"] = val;
+//   return result;
+// }
+
+// test(getTotalCost(fareReceiptObj, foodReceiptObj), { cost: 6300 });
+// test(getTotalCost(fareReceiptObj, foodReceiptObj, guideReceiptObj), { cost: 18300 })
