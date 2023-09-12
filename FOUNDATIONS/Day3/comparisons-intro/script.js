@@ -97,20 +97,22 @@
 // ナイトメア演習
 // 1
 function flatten(array) {
-    const list = array;
-    let list2;
-    list.forEach(elm => {
-        list2 = elm;
-        list2.forEach(elm => {
-            console.log(elm)
-        })
-    })
+    const result = [];
+    array.forEach(element => {
+        if (typeof element === "number") {
+            result.push(element);
+        } else {
+            element.forEach(elem => result.push(elem))
+        }
+    });
+    return result;
 }
+
 
 console.log(
     flatten([
-    [1, 2, 3],
-    [4, 5, 6],
+        [1, 2, 3],
+        [4, 5, 6],
     ])
 ); // [1, 2, 3, 4, 5, 6]
 console.log(flatten([1, 2, 3, [4, 5, 6]])); // [1, 2, 3, 4, 5, 6]

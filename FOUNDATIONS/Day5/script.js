@@ -130,58 +130,54 @@ let actual;
 // }
 
 // 2
-// /**
-// * @param {"=="|"==="|"<"|"<="|">"|">="} comparison - 使用したい比較演算子
-// * @param {number} operand1 - 1 番目の被演算子
-// * @param {number} operand2 - 2 番目の被演算子
-// * @returns {number} 与えられた演算子を被演算子と組み合わせて比較した結果
-// */
-// // 関数を定義しましょう
-// function compare(comparison,operand1,operand2) {
-//   if (`${operand1} ${comparison} ${operand2}`) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
+/**
+* @param {"=="|"==="|"<"|"<="|">"|">="} comparison - 使用したい比較演算子
+* @param {number} operand1 - 1 番目の被演算子
+* @param {number} operand2 - 2 番目の被演算子
+* @returns {number} 与えられた演算子を被演算子と組み合わせて比較した結果
+*/
+// 関数を定義しましょう
+function compare(comparison, operand1, operand2) {
+  console.log(ope);
+}
 
-// actual = compare("===", 1, 1);
-// expected = true;
+actual = compare("===", 1, 1);
+expected = true;
 
-// if (actual === expected) {
-//   console.log("OK! Test PASSED!");
-// } else {
-//   console.error("NG. Test FAILED. がんばって！");
-//   console.group("Result:");
-//   console.log("  actual:", actual);
-//   console.log("expected:", expected);
-//   console.groupEnd();
-// }
+if (actual === expected) {
+  console.log("OK! Test PASSED!");
+} else {
+  console.error("NG. Test FAILED. がんばって！");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
 
-// actual = compare("===", 1, "1");
-// expected = false;
+actual = compare("===", 1, "1");
+expected = false;
 
-// if (actual === expected) {
-//   console.log("OK! Test PASSED!");
-// } else {
-//   console.error("NG. Test FAILED. がんばって！");
-//   console.group("Result:");
-//   console.log("  actual:", actual);
-//   console.log("expected:", expected);
-//   console.groupEnd();
-// }
+if (actual === expected) {
+  console.log("OK! Test PASSED!");
+} else {
+  console.error("NG. Test FAILED. がんばって！");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
 
-// actual = compare("==", 1, "1");
-// expected = true;
+actual = compare("==", 1, "1");
+expected = true;
 
-// if (actual === expected) {
-//   console.log("OK! Test PASSED!");
-// } else {
-//   console.error("NG. Test FAILED. がんばって！");
-//   console.group("Result:");
-//   console.log("  actual:", actual);
-//   console.log("expected:", expected);
-//   console.groupEnd();
-// }
+if (actual === expected) {
+  console.log("OK! Test PASSED!");
+} else {
+  console.error("NG. Test FAILED. がんばって！");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
 
 // // 他の演算子を使ったテストも書いてみましょう。
