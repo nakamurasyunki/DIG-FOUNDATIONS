@@ -180,43 +180,45 @@ let expected;
 
 // 5
 /**
-//  * @param {"+"|"-"|"*"|"/"|"**"|"%"} ope - 使用する算術演算子を表す文字列
-//  * @param {number} ??? - 1 番目の被演算子
-//  * @param {number} ??? - 2 番目の被演算子
-//  * @returns {number} 与えられた演算子を被演算子と組み合わせて実行した結果
-//  */
+ * @param {"+"|"-"|"*"|"/"|"**"|"%"} ope - 使用する算術演算子を表す文字列
+ * @param {number} ??? - 1 番目の被演算子
+ * @param {number} ??? - 2 番目の被演算子
+ * @returns {number} 与えられた演算子を被演算子と組み合わせて実行した結果
+ */
 
-// // 関数を定義しましょう
+// 関数を定義しましょう
 // const operate = (ope, num1, num2) => {
 //   const calculate = `${num1}${ope}${num2}`;
 //   return (new Function(`return ${calculate}`))();
 // };
 
-// actual = operate("+", 1, 2);
-// expected = 3;
+const operate = (ope, num1, num2) => (new Function(`return ${num1}${ope}${num2}`))();
 
-// if (actual === expected) {
-//   console.log("OK! Test PASSED.");
-// } else {
-//   console.error("Test FAILED. Try again!");
-//   console.group("Result:");
-//   console.log("  actual:", actual);
-//   console.log("expected:", expected);
-//   console.groupEnd();
-// }
+actual = operate("+", 1, 2);
+expected = 3;
 
-// actual = operate("-", 100, 33);
-// expected = 67;
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
 
-// if (actual === expected) {
-//   console.log("OK! Test PASSED.");
-// } else {
-//   console.error("Test FAILED. Try again!");
-//   console.group("Result:");
-//   console.log("  actual:", actual);
-//   console.log("expected:", expected);
-//   console.groupEnd();
-// }
+actual = operate("-", 100, 33);
+expected = 67;
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
 
 // // *, /, **, % を使ってさらにテストを書いてみましょう
 
