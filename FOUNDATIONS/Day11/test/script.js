@@ -279,7 +279,7 @@ console.log("--- 確認 ---");
 
 console.log("--- 基礎演習 ---");
 // 1
-// console.log("--- 1 ---");
+console.log("--- 1 ---");
 
 // /**
 //  * 
@@ -299,7 +299,7 @@ console.log("--- 基礎演習 ---");
 // "Hello!"
 
 // 2
-// console.log("--- 2 ---");
+console.log("--- 2 ---");
 
 // function countToTen() {
 //   for (let i = 1; i <= 10; i++) {
@@ -321,7 +321,7 @@ console.log("--- 基礎演習 ---");
 // 10
 
 // 3
-// console.log("--- 3 ---");
+console.log("--- 3 ---");
 
 // function counter(num) {
 //   let i = 0;
@@ -340,7 +340,7 @@ console.log("--- 基礎演習 ---");
 // counter(10);
 
 // 4
-// console.log("--- 4 ---");
+console.log("--- 4 ---");
 
 // const array = [1, 2, 3, 4, 5];
 
@@ -362,12 +362,12 @@ console.log("--- 基礎演習 ---");
 // 5
 
 // 5
-// console.log("--- 5 ---");
+console.log("--- 5 ---");
 
 // printArray("array");
 
 // 6
-// console.log("--- 6 ---");
+console.log("--- 6 ---");
 
 // /**
 //  * @param {Array<number>} lists
@@ -524,3 +524,30 @@ console.log("--- 6 ---");
 // test(addTogether([1, 2, 3], [4]), [5, 2, 3]);
 
 console.log("--- 応用演習 ---");
+console.log("--- 1 ---");
+// let password = prompt("パスワードを入力してください")
+// while (password !== "1107") {
+//   password = prompt("パスワードを入力してください")
+// }
+
+// const getPass = () => {
+//   let password = prompt("パスワードを入力してください");
+//   while (password === "1107") {
+//     return password;
+//   }
+//   return getPass();
+// }
+
+console.log("--- 2 ---");
+/**
+ * @param {Array<any>} array
+ * @returns {Array<any>} 重複していない値のみが入った新しい配列
+ */
+// ここにコードを書きましょう
+
+function unique(array) {
+
+}
+
+test(unique([1, 1, 1, 1, 1]), []);
+test(unique([1, 3, 4, 5, 2, 4]), [1, 3, 5, 2]);

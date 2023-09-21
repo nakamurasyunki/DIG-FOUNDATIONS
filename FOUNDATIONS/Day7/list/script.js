@@ -196,7 +196,7 @@ let expected;
 //  */
 // // ここにコードを書きましょう
 // function myPop(array) {
-//   return array[array.length-1];
+//   return array.splice(array.length - 1, 1)[0];
 // }
 
 // const array = [1, 2, 3, 4];
@@ -213,8 +213,6 @@ let expected;
 //   console.log("expected:", expected);
 //   console.groupEnd("Result:");
 // }
-
-// array.splice(array.length-1,1);
 
 // actual = array;
 // expected = [1, 2, 3];
@@ -408,26 +406,26 @@ let expected;
 // console.log("----- 3 -----");
 
 // /**
-//  * @param {Array<any>} array1 - 1 番目の配列
-//  * @param {Array<any>} array2 - 2 番目の配列
-//  * @returns {Array<any>} 与えられた 2 つの配列を連結した新しい 1 つの配列を返す
-//  */
-// // ここにコードを書きましょう
-function myConcat(array1, array2) {
-  // const list = array1.slice();
-  // for (const elem of array2) {
-  //   list.push(elem);
-  // }
-  // return list;
+// //  * @param {Array<any>} array1 - 1 番目の配列
+// //  * @param {Array<any>} array2 - 2 番目の配列
+// //  * @returns {Array<any>} 与えられた 2 つの配列を連結した新しい 1 つの配列を返す
+// //  */
+// // // ここにコードを書きましょう
+// function myConcat(array1, array2) {
+//   // const list = array1.slice();
+//   // for (const elem of array2) {
+//   //   list.push(elem);
+//   // }
+//   // return list;
 
-  const list = [...array1, ...array2]
-  return list;
-}
+//   const list = [...array1, ...array2]
+//   return list;
+// }
 
-let array1 = [1, 2, 3, 4];
-let array2 = [4, 3, 2, 1];
+// let array1 = [1, 2, 3, 4];
+// let array2 = [4, 3, 2, 1];
 
-actual = myConcat(array1, array2);
+// actual = myConcat(array1, array2);
 // expected = [1, 2, 3, 4, 4, 3, 2, 1];
 
 // if (JSON.stringify(actual) === JSON.stringify(expected)) {
@@ -474,7 +472,7 @@ actual = myConcat(array1, array2);
 //   console.log(element);
 // });
 
-/// 2
+// / 2
 // console.log("--- 2 ---");
 // actual.forEach(element => {
 //   console.log(element * 2);
@@ -492,7 +490,16 @@ console.log("--- ナイトメア ---");
 // function mySort(lists) {
 //   // ここにコードを書きましょう.
 //   const result = [];
-
+//   for (const elem of lists) {
+//     if (result[result.length - 1] === undefined) {
+//       result.push(elem);
+//     } else if (elem > result[result.length - 1]) {
+//       result.push(elem);
+//     } else {
+//       result.unshift(elem);
+//     }
+//   }
+//   return result;
 // }
 
 // let arrayToSort = [5, 4, 3, 2, 1];
@@ -523,3 +530,29 @@ console.log("--- ナイトメア ---");
 // }
 
 // ここにテストを書いてください
+// let arrayToSort = [9, 8, 5, 3, 1];
+
+// actual = mySort(arrayToSort);
+// expected = [1, 3, 5, 8, 9];
+
+// // 正しい結果を返すことを確認する
+// if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
+
+// // 元の配列が変更されていないことを確認する
+// if (JSON.stringify(arrayToSort) === JSON.stringify([9, 8, 5, 3, 1])) {
+//   console.log("OK! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Try again!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
+// }
