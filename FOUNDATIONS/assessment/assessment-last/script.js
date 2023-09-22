@@ -17,9 +17,9 @@ console.log("--- 1 ---");
 // ここにコードを書きましょう
 /**
  * 
- * @param {array<number>} array 
- * @param {boolean} bool 
- * @returns 
+ * @param {array<number>} array //数値の配列
+ * @param {boolean} bool //true or falseを受け取る
+ * @returns //boolがtrueなら偶数だけの配列 falseなら奇数だけの配列を返す
  */
 const evenOrOdd = (array, bool) => array.filter(elem => {
   if (bool === true) {
@@ -42,12 +42,12 @@ console.log("--- 2 ---");
 // ここにコードを書きましょう
 /**
  * 
- * @param {*} object 
- * @param {*} value 
- * @returns 
+ * @param {object} object 
+ * @param {string or number} target //文字列または数値
+ * @returns //targetにマッチする値を持つ全てのキーの新しい配列を返す
  */
-const findKeys = (object, value) => {
-  return Object.keys(object).filter((key) => object[key] === value)
+const findKeys = (object, target) => {
+  return Object.keys(object).filter((key) => object[key] === target)
 };
 
 // findKeys({ a: 1, b: 2, c: 6, d: 4, e: 2 }, 2); // ["b", "e"]
@@ -61,8 +61,8 @@ console.log("--- 3 ---");
 // ここにコードを書きましょう
 /**
  * 
- * @param {*} keyArray 
- * @param {*} valueArray 
+ * @param {array<string>} keyArray 
+ * @param {array} valueArray 
  * @returns 
  */
 const buildObject = (keyArray, valueArray) => {
@@ -86,6 +86,11 @@ test(buildObject(["abc", "def", "ghi"], [[0, 1, 2], [3, 4, 5], [6, 7, 8]]), { "a
 // 4
 console.log("--- 4 ---");
 // ここにコードを書きましょう
+/**
+ * 
+ * @param {number} x 
+ * @returns 
+ */
 const add = x => function (y) {
   return x + y;
 };
@@ -125,16 +130,26 @@ console.log(bar);
 // 引数にJavaScriptが送られ関数sayHelloAndNameの返り値が表示される
 
 // 6
+console.log("--- 6 ---");
+console.log("別フォルダに記述");
 
 // 7
 console.log("--- 7 ---");
 // ここにコードを書きましょう
+/**
+ * 
+ * @param {array or object} collection 
+ * @param {function} func 
+ * @returns 
+ */
 const map = (collection, func) => {
+  const result = [];
   if (Array.isArray(collection) === true) {
-    return collection.map(elem => func(elem));
+    Array.from(collection, elem => result.push(func(elem)));
   } else {
-    return Object.values(collection).map(val => func(val));
+    Array.from(Object.values(collection), elem => result.push(func(elem)));
   }
+  return result;
 }
 
 function addOne(num) {
@@ -149,9 +164,17 @@ test(map({ a: 1, b: 2, c: 3 }, addOne), [2, 3, 4]);
 // 8
 console.log("--- 8 ---");
 // ここにコードを書きましょう
+/**
+ * 
+ * @param {string} str 
+ * @param {string} word 
+ * @returns 
+ */
 const changeMiddle = (str, word) => {
-  const changeWord = str.slice(str.indexOf(" ") + 1, str.indexOf(" ", str.indexOf(" ") + 1));
-  return str.replace(changeWord, word);
+  const changeWord = str.split(" ");
+  const wordPlace = Math.floor(changeWord.length / 2);
+  changeWord[wordPlace] = word;
+  return changeWord.join(" ");
 };
 
 // changeMiddle("I like cats", "love"); // "I love cats"
@@ -163,10 +186,13 @@ test(changeMiddle("red green blue", "yellow"), "red yellow blue");
 // 9
 console.log("--- 9 ---");
 // ここにコードを書きましょう
+/**
+ * 
+ * @param {array} array 
+ * @returns 
+ */
 const countSomething = array => {
-  let strCount = 0;
-  let boolCount = 0;
-  let numCount = 0;
+  let strCount = 0, boolCount = 0, numCount = 0;
 
   for (const elem of array) {
     if (typeof elem === "string") {
@@ -196,6 +222,55 @@ test(countSomething([true, true, 1, 0, 1, false, 1]), "NUMBER COUNT: 4");
 
 // 10
 console.log("--- 10 ---");
+// ここにコードを書きましょう
+/**
+ * 
+ * @param {array or object} collection 
+ * @param {console.log} action 
+ */
+const each = (collection, action) => {
+  if (Array.isArray(collection) === true) {
+    Array.from(collection, num => action(num));
+  } else {
+    Array.from(Object.values(collection), num => action(num));
+  }
+};
+
+each({ a: 1, b: 2, c: 3 }, console.log);
+each([4, 5, 6], console.log);
+
+// 上記を実行すると下記を表示するはずです
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
 
 // 11
 console.log("--- 11 ---");
+// ここにコードを書きましょう
+/**
+ * 
+ * @param {function} funcA 
+ * @param {function} funcB 
+ * @returns 
+ */
+const compose = (funcA, funcB) => function (x) {
+  return funcB(funcA(x));
+};
+
+function multiplyTwo(x) {
+  return x * 2;
+}
+
+function addTen(x) {
+  return x + 10;
+}
+
+const baz = compose(multiplyTwo, addTen);
+// baz(5); // 20
+// baz(100); // 210
+
+test(baz(5), 20);
+test(baz(100), 210);
