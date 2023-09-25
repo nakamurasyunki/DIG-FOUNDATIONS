@@ -22,7 +22,7 @@ const randomColor = () => {
 };
 
 const randomImage = () => {
-  const imagList = ["imgbb/aaaa.jpg", "imgbb/random_color.gif"];
+  const imagList = ["img/aaaa.jpg", "img/random_color.gif", "img/FND-19-1.jpg", "img/FND-19-2.jpg"];
   const randomNumber = Math.floor(Math.random() * imagList.length);
 
   return imagList[randomNumber];
@@ -39,6 +39,7 @@ function changeColor() {
 function changeImg() {
   const imgName = document.getElementById("img").getAttribute('src');
   const img = randomImage();
+  // 同じ画像表示しない
   if (img === undefined || img === imgName) {
     changeImg();
   } else {
@@ -63,83 +64,20 @@ function changeAll() {
   }
 }
 
+// 画像クリック回数とイベント
 let clickCount = 0;
 function clickImg() {
   clickCount++;
+  console.log(clickCount);
   if (clickCount >= 5) {
-    particlesJS("img", { //ここに書くのがHTMLのidに対応するもの
-      "img": {
-        "number": {
-          "value": 50,//紙吹雪の数
-          "density": {
-            "enable": false,
-            "value_area": 200
-          }
-        },
-        "color": {
-          "value": ["#EA5532", "#F6AD3C", "#FFF33F", "#00A95F", "#00ADA9", "#00AFEC", "#4D4398", "#E85298"]//紙吹雪の色の種類
-        },
-        "shape": {
-          "type": "polygon",//形状はPolygon,つまり多角形
-          "stroke": {
-            "width": 0,
-          },
-          "polygon": {
-            "nb_sides": 4//多角形の角の数
-          }
-        },
-        "opacity": {
-          "value": 1,
-          "random": false,
-          "anim": {
-            "enable": true,
-            "speed": 20,
-            "opacity_min": 0,
-            "sync": false
-          }
-        },
-        "size": {
-          "value": 5,
-          "random": true,//サイズをランダムにする
-          "anim": {
-            "enable": true,
-            "speed": 1,
-            "size_min": 1,
-            "sync": false
-          }
-        },
-        "line_linked": {
-          "enable": false,
-        },
-        "move": {
-          "enable": true,
-          "speed": 5,//小さくするとゆっくり、大きくすると速くなる
-          "direction": "bottom",//落ちる向き
-          "random": false,//動きをランダムにするか
-          "straight": false,//まっすぐ落ちるかどうか
-          "out_mode": "out",//画面の外に出るか
-          "bounce": false,//跳ね返るかどうか
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {
-            "enable": false,
-          },
-          "onclick": {
-            "enable": false,
-          },
-          "resize": true
-        },
-      },
-      "retina_detect": true
-    });
+    document.getElementsByClassName("row")[0].style.display = "none";
+    document.getElementsByTagName("body")[0].style.background = "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)";
+    document.getElementsByTagName("body")[0].style.backgroundSize = "400% 400%";
+    document.getElementsByTagName("body")[0].style.animation = "gradient 15s ease infinite";
+    document.getElementsByClassName("secret")[0].style.display = "block";
     clickCount = 0;
+    document.getElementById("back-button").addEventListener('click', clickBack);
   }
 }
+
+const clickBack = () => location.reload();
