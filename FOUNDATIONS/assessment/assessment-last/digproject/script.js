@@ -22,9 +22,8 @@ const randomColor = () => {
 };
 
 const randomImage = () => {
-  const imagList = ["img/aaaa.jpg", "img/random_color.gif", "img/FND-19-1.jpg", "img/FND-19-2.jpg"];
+  const imagList = ["https://i.ibb.co/Gdh9HPb/aaaa.jpg", "https://i.ibb.co/x7Hy9jq/random-color.gif", "https://i.ibb.co/Wpvfcb9/FND-19-1.png", "https://i.ibb.co/HzjVY1j/FND-19-2.png"];
   const randomNumber = Math.floor(Math.random() * imagList.length);
-
   return imagList[randomNumber];
 }
 
