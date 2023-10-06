@@ -236,7 +236,9 @@ console.log("--- 1 ---");
  * @returns {Function} 呼び出しが連鎖でき、value メソッドで値を取り出せる関数
  */
 // ここにコードを書きましょう
-
+const addCurry = (...num) => {
+  return
+}
 // 関数を一度呼び出すだけでも、value() で値を得られます。
 test(addCurry(1).value(), 1);
 
