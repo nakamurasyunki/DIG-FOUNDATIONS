@@ -23,7 +23,7 @@ function test(actual, expected) {
 //  */
 
 // // ここにコードを書きましょう。
-// function pluck(arrays,key) {
+// function pluck(arrays, key) {
 //   const result = [];
 //   for (const array of arrays) {
 //     result.push(array[key]);
@@ -44,7 +44,7 @@ function test(actual, expected) {
 // for in ループ
 const infoObject = { name: "Hana", dog: "true", age: 12 };
 
-for(const key in infoObject) {
+for (const key in infoObject) {
   const value = infoObject[key];
   console.log(infoObject[key]);
 }
