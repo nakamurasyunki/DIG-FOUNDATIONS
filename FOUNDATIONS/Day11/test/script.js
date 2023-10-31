@@ -291,7 +291,14 @@ console.log("--- 1 ---");
 //   }
 // }
 
-// sayHellos(4);
+// リファクタ
+const sayHellos = n => {
+  for (let i = 1; i <= n; i++) {
+    console.log("Hello!");
+  }
+};
+
+sayHellos(4);
 
 // "Hello!"
 // "Hello!"
@@ -307,7 +314,14 @@ console.log("--- 2 ---");
 //   }
 // }
 
-// countToTen();
+// リファクタ
+const countToTen = () => {
+  for (let i = 1; i <= 10; i++) {
+    console.log(i);
+  }
+};
+
+countToTen();
 
 // 1
 // 2

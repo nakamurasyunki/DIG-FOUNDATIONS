@@ -165,32 +165,32 @@ console.log("--- 4 ---");
 
 console.log("--- 中級演習 ---");
 console.log("--- 1 ---");
-/**
- * @param {number} 年齢
- * @returns {() => boolean} 実行されるたびに age に 1 を足し、 age が 13 以上かどうかを返す関数
- */
-// ここにコードを書きましょう
-function createWebsiteAccount(age) {
-  function sumAge() {
-    age += 1;
-    if (age >= 13) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  return sumAge;
-}
+// /**
+//  * @param {number} 年齢
+//  * @returns {() => boolean} 実行されるたびに age に 1 を足し、 age が 13 以上かどうかを返す関数
+//  */
+// // ここにコードを書きましょう
+// function createWebsiteAccount(age) {
+//   function sumAge() {
+//     age += 1;
+//     if (age >= 13) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+//   return sumAge;
+// }
 
-const childAccount = createWebsiteAccount(10);
-test(childAccount(), false); // => false
-test(childAccount(), false); // => false
-test(childAccount(), true); // => true (今、子供は 13 歳です！)
+// const childAccount = createWebsiteAccount(10);
+// test(childAccount(), false); // => false
+// test(childAccount(), false); // => false
+// test(childAccount(), true); // => true (今、子供は 13 歳です！)
 
-const adultAccount = createWebsiteAccount(33);
-test(adultAccount(), true); // => true (何回呼び出すかに関わらず、いつも true を返す)
-test(adultAccount(), true); // => true (何回呼び出すかに関わらず、いつも true を返す)
-test(adultAccount(), true); // => true (何回呼び出すかに関わらず、いつも true を返す)
+// const adultAccount = createWebsiteAccount(33);
+// test(adultAccount(), true); // => true (何回呼び出すかに関わらず、いつも true を返す)
+// test(adultAccount(), true); // => true (何回呼び出すかに関わらず、いつも true を返す)
+// test(adultAccount(), true); // => true (何回呼び出すかに関わらず、いつも true を返す)
 
 console.log("--- 2 ---");
 // /**

@@ -15,14 +15,14 @@ function test(actual, expected) {
   }
 }
 
-// const hellos = {
-//   English: "Hello",
-//   Japanese: "Konnichiwa",
-//   German: "Hallo",
-//   Spanish: "Hola",
-//   Arabic: "Ahlan wa sahlan",
-//   Chinese: "Nihao",
-// };
+const hellos = {
+  English: "Hello",
+  Japanese: "Konnichiwa",
+  German: "Hallo",
+  Spanish: "Hola",
+  Arabic: "Ahlan wa sahlan",
+  Chinese: "Nihao",
+};
 
 // /*
 //  * @returns {undefined} この関数は挨拶をコンソールに表示するだけで、返り値は必要ありません。
@@ -34,6 +34,11 @@ function test(actual, expected) {
 //     console.log(val);
 //   }
 // }
+
+// リファクタ
+// const sayHellos = () => Object.keys(hellos).forEach(key => {
+//   console.log(hellos[key]);
+// });
 
 // sayHellos(); // 実際にこの関数を呼び出すと、以下のようにコンソールに表示されることを確認しましょう。
 // // "Hello"
@@ -56,6 +61,9 @@ function test(actual, expected) {
 //   return result;
 // }
 
+// リファクタ
+// const getKeys = objects => Object.keys(objects);
+
 // const object1 = { a: 1, b: 2, c: "hello" };
 // const object2 = { 1: "a", 2: "b", hello: "c" };
 
@@ -74,6 +82,9 @@ function test(actual, expected) {
 //   }
 //   return result;
 // }
+
+// リファクタ
+// const getValues = objects => Object.values(objects);
 
 // test(getValues(object1), [1, 2, "hello"]);
 // test(getValues(object2), ["a", "b", "c"]);
@@ -416,86 +427,86 @@ function test(actual, expected) {
 // ナイトメア
 // 1
 /**
- * @param {object}
- * @returns {number} 引数のオブジェクトの深さ（何層になっているか）を返す。入れ子になったオブジェクトが複数ある場合は、一番深い層の数を返してください。
- */
+//  * @param {object}
+//  * @returns {number} 引数のオブジェクトの深さ（何層になっているか）を返す。入れ子になったオブジェクトが複数ある場合は、一番深い層の数を返してください。
+//  */
 
 // ここにコードを書きましょう
 // const getDepth = obj => Object.keys(obj).length;
 
-let count = 0;
-function getDepth(obj) {
-  count += 1;
-  for (const key in obj) {
-    const val = obj[key];
-    if (typeof val === "object") {
-      count += 1;
-      getDepth(val);
-    } else {
-      // count += 1;
-    }
-  }
-  count -= 1;
-  return count;
-}
+// let count = 0;
+// function getDepth(obj) {
+//   count += 1;
+//   for (const key in obj) {
+//     const val = obj[key];
+//     if (typeof val === "object") {
+//       count += 1;
+//       getDepth(val);
+//     } else {
+//       // count += 1;
+//     }
+//   }
+//   count -= 1;
+//   return count;
+// }
 
-const nestedObject1 = { a: "A" };
-const nestedObject2 = { a: "A", b: { c: "C" } };
-const nestedObject3 = { a: "A", b: { c: "C" }, d: { e: { f: "F" } } };
-const nestedObjectZ = {
-  z: {
-    y: {
-      x: {
-        w: {
-          v: {
-            u: {
-              t: {
-                s: {
-                  r: {
-                    q: {
-                      p: {
-                        o: {
-                          n: {
-                            m: {
-                              l: {
-                                k: {
-                                  j: {
-                                    i: {
-                                      h: {
-                                        g: {
-                                          f: {
-                                            e: "E",
-                                          },
-                                        },
-                                      },
-                                    },
-                                  },
-                                },
-                              },
-                            },
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-};
+// const nestedObject1 = { a: "A" };
+// const nestedObject2 = { a: "A", b: { c: "C" } };
+// const nestedObject3 = { a: "A", b: { c: "C" }, d: { e: { f: "F" } } };
+// const nestedObjectZ = {
+//   z: {
+//     y: {
+//       x: {
+//         w: {
+//           v: {
+//             u: {
+//               t: {
+//                 s: {
+//                   r: {
+//                     q: {
+//                       p: {
+//                         o: {
+//                           n: {
+//                             m: {
+//                               l: {
+//                                 k: {
+//                                   j: {
+//                                     i: {
+//                                       h: {
+//                                         g: {
+//                                           f: {
+//                                             e: "E",
+//                                           },
+//                                         },
+//                                       },
+//                                     },
+//                                   },
+//                                 },
+//                               },
+//                             },
+//                           },
+//                         },
+//                       },
+//                     },
+//                   },
+//                 },
+//               },
+//             },
+//           },
+//         },
+//       },
+//     },
+//   },
+// };
 
-// nestedObject1 の深さは 1 です
-test(getDepth(nestedObject1), 1);
+// // nestedObject1 の深さは 1 です
+// test(getDepth(nestedObject1), 1);
 
-// nestedObject2 の深さは 2 です
-test(getDepth(nestedObject2), 2);
+// // nestedObject2 の深さは 2 です
+// test(getDepth(nestedObject2), 2);
 
-// nestedObject3 の深さは 3 です
-test(getDepth(nestedObject3), 3);
+// // nestedObject3 の深さは 3 です
+// test(getDepth(nestedObject3), 3);
 
-// nestedObjectZ の深さは 22 です。
-test(getDepth(nestedObjectZ), 22);
+// // nestedObjectZ の深さは 22 です。
+// test(getDepth(nestedObjectZ), 22);
