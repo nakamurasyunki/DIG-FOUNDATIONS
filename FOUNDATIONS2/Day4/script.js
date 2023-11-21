@@ -101,12 +101,72 @@ console.log(isEven("7")); // => false が表示されるようにする。
 console.log("===============");
 console.log("--- 中級演習 ---");
 console.log("--- 1 ---");
+const isOdd = num => {
+  if (typeof num === "number") {
+    if (num % 2 === 1) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return "数値じゃありません";
+  }
+};
+
+console.log(isOdd(2)); //false
+console.log(isOdd(3)); //true
+console.log(isOdd("2")); //"数値じゃありません"
 
 console.log("--- 2 ---");
+const isPositive = num => {
+  if (typeof num === "number") {
+    if (Math.sign(num) === 1) {
+      return true;
+    } else if (Math.sign(num) === -1) {
+      return false;
+    }
+  } else {
+    return "数値じゃありません";
+  }
+};
+
+console.log(isPositive(-2)); //false
+console.log(isPositive(3)); //true
+console.log(isPositive("2")); //"数値じゃありません"
 
 console.log("--- 3 ---");
+const isNegative = num => {
+  if (typeof num === "number") {
+    if (Math.sign(num) === 1) {
+      return true;
+    } else if (Math.sign(num) === -1) {
+      return false;
+    }
+  } else {
+    return "数値じゃありません";
+  }
+};
+
+console.log(isNegative(2)); //false
+console.log(isNegative(-3)); //true
+console.log(isNegative("2")); //"数値じゃありません"
 
 console.log("--- 4 ---");
+const isZero = num => {
+  if (typeof num === "number") {
+    if (num === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return "数値じゃありません";
+  }
+};
+
+console.log(isZero(2)); //false
+console.log(isZero(0)); //true
+console.log(isZero("2")); //"数値じゃありません"
 
 console.log("--- 5 ---");
 
