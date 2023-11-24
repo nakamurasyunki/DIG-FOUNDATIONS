@@ -293,58 +293,73 @@ let expected;
 //   return JSON.stringify(result) === JSON.stringify(array);
 // }
 
-// actual = isSorted([1, 2, 3]);
-// expected = true;
+function isSorted(array) {
+  let result = false;
+  let i = 1;
+  for (const elem of array) {
+    if (elem <= array[i] || array[i] === undefined) {
+      result = true;
+      i += 1;
+    } else {
+      result = false;
+      break;
+    }
+  }
+  return result
+}
 
-// if (actual === expected) {
-//   console.log("OK! Test PASSED.");
-// } else {
-//   console.error("Test FAILED. Try again!");
-//   console.group("Result:");
-//   console.log("  actual:", actual);
-//   console.log("expected:", expected);
-//   console.groupEnd();
-// }
+actual = isSorted([1, 2, 3]);
+expected = true;
 
-// actual = isSorted([3, 2, 3]);
-// expected = false;
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
 
-// if (actual === expected) {
-//   console.log("OK! Test PASSED.");
-// } else {
-//   console.error("Test FAILED. Try again!");
-//   console.group("Result:");
-//   console.log("  actual:", actual);
-//   console.log("expected:", expected);
-//   console.groupEnd();
-// }
+actual = isSorted([3, 2, 3]);
+expected = false;
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
 
 // // さらにテストを書きましょう。
-// actual = isSorted([-1, 2, 3]);
-// expected = true;
+actual = isSorted([-1, 2, 3]);
+expected = true;
 
-// if (actual === expected) {
-//   console.log("OK! Test PASSED.");
-// } else {
-//   console.error("Test FAILED. Try again!");
-//   console.group("Result:");
-//   console.log("  actual:", actual);
-//   console.log("expected:", expected);
-//   console.groupEnd();
-// }
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
 
-// actual = isSorted([-1, 2, -3]);
-// expected = false;
+actual = isSorted([-1, 2, -3]);
+expected = false;
 
-// if (actual === expected) {
-//   console.log("OK! Test PASSED.");
-// } else {
-//   console.error("Test FAILED. Try again!");
-//   console.group("Result:");
-//   console.log("  actual:", actual);
-//   console.log("expected:", expected);
-//   console.groupEnd();
-// }
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
 
 // 2
 // /**
