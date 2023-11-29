@@ -169,9 +169,33 @@ console.log(isZero(0)); //true
 console.log(isZero("2")); //"数値じゃありません"
 
 console.log("--- 5 ---");
+const randomNumber = number => Math.random() * number;
+
+console.log(randomNumber(2));
 
 console.log("--- 6 ---");
+const guessMyNumber = number => {
+  if (number === Math.floor(Math.random() * 6)) {
+    return "Yes!";
+  } else {
+    return "No!";
+  }
+};
+
+console.log(guessMyNumber(3));
 
 console.log("===============");
 console.log("--- 応用演習 ---");
 console.log("--- 1 ---");
+const randomStopLight = () => {
+  const selectNumber = Math.floor(Math.random() * 11);
+  if (selectNumber < 3) {
+    return "🔴Red";
+  } else if (selectNumber >= 3 && selectNumber <= 6) {
+    return "🟡Yellow";
+  } else {
+    return "🟢Green";
+  }
+};
+
+console.log(randomStopLight());
